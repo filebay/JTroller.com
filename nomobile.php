@@ -61,7 +61,7 @@ $encodedUrl = urlencode($currentPageUrl);
             <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $encodedUrl; ?>" class="btn btn-primary social-btn" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
         </div>
         <div class="col mb-2">
-            <a href="https://twitter.com/intent/tweet?url=<?php echo $encodedUrl; ?>&text=Check this out" class="btn btn-info social-btn" target="_blank"><i class="fab fa-twitter"></i> X</a>
+            <a href="https://twitter.com/intent/tweet?url=<?php echo $encodedUrl; ?>&text=Check this out" class="btn btn-info social-btn" target="_blank"><i class="fab fa-twitter"></i> X/Twitter</a>
         </div>
         <div class="col mb-2">
             <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $encodedUrl; ?>" class="btn btn-secondary social-btn" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
@@ -82,7 +82,7 @@ $encodedUrl = urlencode($currentPageUrl);
 	      <span class="tech-title"><i class="fab fa-github"></i>&nbsp;&nbsp;Development Transparency:</span>
 	      <span class="tech">Javascript (57.3%)</span>
 	      <span class="tech">HTML (28.7%)</span>
-	      <span class="tech">CSS (14.0%)</span><br>Not affiliated with <a href="https://liar.com" target="_blank" class="text-decoration-none">Liar.com</a>
+	      <span class="tech">CSS (14.0%)</span>
 	  </div>
     <footer class="container">
 	 <small>Not affiliated with <a href="http://liar.com" target="_blank" class="text-decoration-none">Liar.com</a></small><br><br>

@@ -21,7 +21,7 @@
     </nav>
     <div class="container mt-5">
         <canvas id="gameCanvas" width="800" height="800"></canvas>
-	    <script src="jtroller.js"></script>
+	    <script src="jtroller.js?v=9"></script>
     </div>
 <div class="container mt-4">
     <div class="row equal-height">
@@ -71,7 +71,7 @@ $encodedUrl = urlencode($currentPageUrl);
             <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $encodedUrl; ?>" class="btn btn-primary social-btn" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
         </div>
         <div class="col mb-2">
-            <a href="https://twitter.com/intent/tweet?url=<?php echo $encodedUrl; ?>&text=Check this out" class="btn btn-info social-btn" target="_blank"><i class="fab fa-twitter"></i> X</a>
+            <a href="https://twitter.com/intent/tweet?url=<?php echo $encodedUrl; ?>&text=Check this out" class="btn btn-info social-btn" target="_blank"><i class="fab fa-twitter"></i> X/Twitter</a>
         </div>
         <div class="col mb-2">
             <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $encodedUrl; ?>" class="btn btn-secondary social-btn" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>

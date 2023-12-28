@@ -8,3 +8,7 @@
  You may contact the developer at yellow.wing9848 'at' fastmail.com.
 
  ![Screenshot 1](https://i.imgur.com/0FrrExc.png)
+
+V 2.0
+
+V 1.0 (JS Included)

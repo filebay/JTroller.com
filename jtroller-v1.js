@@ -16,7 +16,7 @@ stickFigure.src = 'jtroller.png';
 
 // Background image
 const backgroundImage = new Image();
-backgroundImage.src = 'canvasv2.png';
+backgroundImage.src = 'canvas.png';
 let backgroundImageLoaded = false;
 
 // Game variables
@@ -33,7 +33,6 @@ let imageLoaded = false;
 let highScore = 0;
 let currentScore = 0;
 let firstGame = true;
-let animationFrameId = null;
 
 backgroundImage.onload = function() {
     backgroundImageLoaded = true;
@@ -148,7 +147,11 @@ function update(deltaTime) {
 }
 
 function gameLoop(timestamp) {
-    if (!gameStarted || paused) {
+    if (!gameStarted) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawBackground();
+        drawMenu();
+        requestAnimationFrame(gameLoop);
         return;
     }
 
@@ -160,7 +163,7 @@ function gameLoop(timestamp) {
     drawLog();
     drawTimer();
 
-    if (gameStarted && !gameOver) {
+    if (gameStarted && !paused && !gameOver) {
         currentScore = timer;
     }
 
@@ -178,34 +181,16 @@ function gameLoop(timestamp) {
             drawMenu();
         }
     } else {
-        animationFrameId = requestAnimationFrame(gameLoop);
-    }
-}
-
-function togglePause() {
-    if (!gameStarted || gameOver) {
-        return;
-    }
-
-    paused = !paused;
-    if (paused) {
-        cancelAnimationFrame(animationFrameId);
-        // Draw the pause message
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawWater();
-        drawLog();
-        drawTimer();
-        drawHighScore();
-        drawPauseMessage();
-    } else {
-        lastRenderTime = performance.now();
-        animationFrameId = requestAnimationFrame(gameLoop);
+        requestAnimationFrame(gameLoop);
     }
 }
 
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
-        togglePause();
+        paused = !paused;
+        if (!paused && gameStarted) {
+            requestAnimationFrame(gameLoop);
+        }
     }
 
     if ((event.key === 'Enter' && !gameStarted && imageLoaded) || (gameOver && event.key === 'Enter')) {
@@ -213,7 +198,7 @@ document.addEventListener('keydown', (event) => {
         resetGame();
         lastRenderTime = performance.now();
         firstGame = false;
-        animationFrameId = requestAnimationFrame(gameLoop);
+        requestAnimationFrame(gameLoop);
     }
 
     if (gameOver || paused || !gameStarted) return;
@@ -228,22 +213,20 @@ document.addEventListener('keydown', (event) => {
 
 stickFigure.onload = function () {
     imageLoaded = true;
-    //if (!firstGame) {
+    if (!firstGame) {
         drawMenu();
-		//}
-    animationFrameId = requestAnimationFrame(gameLoop);
+    }
+    requestAnimationFrame(gameLoop);
 };
 
-
-
 window.addEventListener("blur", () => {
-    if (gameStarted && !gameOver && !paused) {
-        togglePause();
+    if (gameStarted && !gameOver) {
+        paused = true;
+        requestAnimationFrame(gameLoop);
     }
 });
-
 window.addEventListener("focus", () => {
-    if (gameStarted && !gameOver && paused) {
-        //togglePause();
+    if (gameStarted && !gameOver && !paused) {
+        requestAnimationFrame(gameLoop);
     }
 });
