@@ -6,3 +6,5 @@
  This game was independently developed by a single creator with no malicious intent and no affiliation or influence from any external parties, directly or indirectly.
 
  You may contact the developer at yellow.wing9848 'at' fastmail.com.
+
+ ![Screenshot 1](https://i.imgur.com/0FrrExc.png)
