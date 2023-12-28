@@ -1,0 +1,83 @@
+body {
+    text-align: center;
+    background-color: #eef;
+}
+canvas {
+    background-color: #eef;
+}
+.navbar, footer {
+    background-color: #eef;
+}
+.card-body {
+    background-color: #eee;
+}
+.title {
+    font-size: 22px;
+}
+.equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+}
+.tech-title {
+    font-weight: bold;
+    margin-right: 8px;
+}
+.tech {
+    margin: 5px;
+    padding: 2px 5px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 600px) {
+    .tech-stack {
+        flex-direction: column;
+        align-items: center;
+   }
+    .tech {
+        font-size: 12px;
+   }
+}
+.equal-height .col-md-6 {
+    display: flex;
+    flex: 1;
+}
+.equal-height .card {
+    width: 100%;
+    flex-grow: 1;
+    transition: all 0.3s ease;
+}
+.equal-height .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+.card-text .contact-info {
+    text-align: right;
+}
+#gameCanvas{
+    border: 2px solid grey;
+    border-radius: 10px;
+}
+.card, .list-group {
+    {
+        border: 2px;
+       border-radius: 20px;
+   }
+    .social-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+   }
+    .social-btn i {
+        margin-right: 8px;
+   }
